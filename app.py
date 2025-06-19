@@ -12,7 +12,8 @@ def add():
     result = arg1 + arg2
     print(f"Row {row}: {arg1} + {arg2} = {result}")
 
-    return jsonify({"status": "complete"})
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    # <-- RETURN sum along with status
+    return jsonify({
+        "status": "complete",
+        "sum": result
+    })
